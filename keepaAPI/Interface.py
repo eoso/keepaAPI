@@ -6,10 +6,11 @@ Interface module to download Amazon product and history data from keepa.com
 
 # Standard library
 import logging
+import imp
 
 # for IPython
 try:
-    reload(logging)
+    imp.reload(logging)
 except:
     pass
 
@@ -239,8 +240,8 @@ def ProductQuery(asins, settings):
         payload['history'] = 0
    
     r = requests.get('https://api.keepa.com/product/?', params=payload)
-    print r.url
-    print len(r.text)
+    print((r.url))
+    print((len(r.text)))
     status_code = r.status_code
 
     # Return parsed response if successful

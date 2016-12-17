@@ -29,7 +29,7 @@ def PlotProduct(product, keys=[], rng=None):
 
     # Use all keys if not specified
     if not keys:
-        keys = product['data'].keys()
+        keys = list(product['data'].keys())
     
     # Create three figures, one for price data, offers, and sales rank
     pricefig, priceax = plt.subplots()
@@ -54,7 +54,7 @@ def PlotProduct(product, keys=[], rng=None):
     for key in keys:
 
         # Continue if key does not exist
-        if key not in product['data'].keys():
+        if key not in list(product['data'].keys()):
             continue
         
         elif 'SalesRank' in key and not 'time' in key:

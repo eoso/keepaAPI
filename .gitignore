@@ -17,3 +17,7 @@ keepaAPI.egg-info/
 build/
 dist/
 keepaAPI/__pycache__/
+
+# Pycharm #
+###########
+.idea/
